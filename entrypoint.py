@@ -11,19 +11,16 @@ repo = G.get_repo(repository)
 releases = repo.get_releases()
 for release in releases:
     if wanted_release == 'stable':
-        if release.prerelease == 0 and release.draft == 0 and release.body == "Warp Stable release":
+        if release.body == "Warp Stable release":
             print('::set-output name=release::{}'.format(release.tag_name))
             break
     elif wanted_release == 'beta':
-        if release.prerelease == 0 and release.draft == 0 and release.body == "Warp Beta release":
+        if release.body == "Warp Beta release":
             print('::set-output name=release::{}'.format(release.tag_name))
             break
-    elif wanted_release == 'prerelease':
-        if release.prerelease == 1:
+    elif wanted_release == 'dev':
+        if release.body == "Nightly Warp Dev release":
             print('::set-output name=release::{}'.format(release.tag_name))
             break
-    elif wanted_release == 'latest':
-        print('::set-output name=release::{}'.format(release.tag_name))
-        break
     else:
         print('Cant get release')
