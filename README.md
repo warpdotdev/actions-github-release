@@ -8,13 +8,14 @@ This Action able to get latest release version (tag) of the remote repository.
 Name | Description | Example
 --- | --- | ---
 repository | The Github owner/repository | `nodejs/node`
-type | The release type (prerelease or stable) | `stable`
+type | The release type (prerelease or beta or stable) | `stable`
 token | Github auth token (default variable for each aciton session) | `${{ secrets.GITHUB_TOKEN }}`
 
 #### Possible values for `type` input
 * *stable* - Get the stable `latest` release
-* *prerelease* - Get the latest `prerelease`
-* *latest* - Get the *really* latest release with no matter is it stable or prerelease
+* *beta* - Get the beta `latest` release
+* *prerelease* - Get the latest `prerelease` (i.e. what we refer to as dev)
+* *latest* - Get the *really* latest release with no matter what the channel version is
 
 ### Outputs
 Action outputs variable `release` with tag name of release.
