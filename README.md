@@ -10,10 +10,10 @@ This Action able to get latest release version (tag) of the remote repository.
 Name | Description | Example
 --- | --- | ---
 repository | The Github owner/repository | `nodejs/node`
-type | The release type (prerelease or beta or stable) | `stable`
+channel | The release channel (prerelease or beta or stable) | `stable`
 token | Github auth token (default variable for each aciton session) | `${{ secrets.GITHUB_TOKEN }}`
 
-#### Possible values for `type` input
+#### Possible values for `channel` input
 * *stable* - Get the stable `latest` release
 * *beta* - Get the beta `latest` release
 * *prerelease* - Get the latest `prerelease` (i.e. what we refer to as dev)
@@ -41,7 +41,7 @@ jobs:
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: "nodejs/node"
-        type: "stable"
+        channel: "stable"
         
     - name: Build image
       uses: docker/build-push-action@v1
