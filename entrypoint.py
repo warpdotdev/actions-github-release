@@ -2,7 +2,7 @@
 
 from github import Github
 import os
-wanted_release = os.environ['type']
+wanted_release = os.environ['channel']
 repository = os.environ['repository']
 token = os.getenv('token', None)
 
