@@ -1,4 +1,6 @@
 # GitHub Actions: Get Github release
+This is a Warp-specific fork of rez0n/actions-github-release.
+
 This Action able to get latest release version (tag) of the remote repository.
 
 ## Configuration
