@@ -16,8 +16,7 @@ token | Github auth token (default variable for each aciton session) | `${{ secr
 #### Possible values for `channel` input
 * *stable* - Get the stable `latest` release
 * *beta* - Get the beta `latest` release
-* *prerelease* - Get the latest `prerelease` (i.e. what we refer to as dev)
-* *latest* - Get the *really* latest release with no matter what the channel version is
+* *dev* - Get the latest `dev`
 
 ### Outputs
 Action outputs variable `release` with tag name of release.
