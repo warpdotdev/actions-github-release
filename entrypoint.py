@@ -18,9 +18,17 @@ for release in releases:
         if release.body == "Warp Beta release":
             print('::set-output name=release::{}'.format(release.tag_name))
             break
+    elif wanted_release == 'canary':
+        if release.body == "Nightly Warp Canary release":
+            print('::set-output name=release::{}'.format(release.tag_name))
+            break
+    elif wanted_release == 'preview':
+        if release.body == "Nightly Warp Preview release":
+            print('::set-output name=release::{}'.format(release.tag_name))
+            break
     elif wanted_release == 'dev':
         if release.body == "Nightly Warp Dev release":
             print('::set-output name=release::{}'.format(release.tag_name))
             break
     else:
-        print('Cant get release')
+        print('Can\'t get release')
