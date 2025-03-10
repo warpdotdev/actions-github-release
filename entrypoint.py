@@ -13,23 +13,23 @@ repo = G.get_repo(repository)
 releases = repo.get_releases()
 for release in releases:
     if wanted_release == 'stable':
-        if release.body == "Warp Stable release":
+        if "Stable release" in release.body:
             output.write('release={}\n'.format(release.tag_name))
             break
     elif wanted_release == 'beta':
-        if release.body == "Warp Beta release":
+        if "Beta release" in release.body:
             output.write('release={}\n'.format(release.tag_name))
             break
     elif wanted_release == 'canary':
-        if release.body == "Nightly Warp Canary release":
+        if "Canary release" in release.body:
             output.write('release={}\n'.format(release.tag_name))
             break
     elif wanted_release == 'preview':
-        if release.body == "Nightly Warp Preview release":
+        if "Preview release" in release.body:
             output.write('release={}\n'.format(release.tag_name))
             break
     elif wanted_release == 'dev':
-        if release.body == "Nightly Warp Dev release":
+        if "Dev release" in release.body:
             output.write('release={}\n'.format(release.tag_name))
             break
     else:
